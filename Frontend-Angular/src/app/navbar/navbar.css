@@ -1,0 +1,73 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px; 
+    background: linear-gradient(90deg, #f0f9ff, #cbebff, #a1dbff);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 18px;
+    border-radius: 0 0 12px 12px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.brand {
+    margin-right: 40px; 
+}
+
+.brand a {
+    font-size: 26px;
+    font-weight: bold;
+    color: #007F86;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    margin: 0;
+    padding: 0;
+    margin-right: 40px; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: #007F86;
+}
+
+.nav-links a.active {
+    background: #007F86;
+    color: white;
+}
+
+.logout-btn {
+    background: linear-gradient(45deg, #ff5f6d, #ffc371);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.logout-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}

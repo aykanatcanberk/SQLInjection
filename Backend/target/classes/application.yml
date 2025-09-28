@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: SqlInjection
+
+  datasource:
+    url: jdbc:postgresql://localhost:5436/sql_injection_db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+secret:
+    jwt:
+      string: b2Lg1fPqs92hJ3nT1VpXw!Gz0zPb3kXv7YvX@jJs9R8tT0h8K9V5e8b2v!hC

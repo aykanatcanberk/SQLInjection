@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  postgresql:
+    container_name: sql_injection
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /data/postgres
+      POSTGRES_DB: sql_injection_db
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5436:5432"
+    networks:
+      - injection-net
+    restart: unless-stopped
+
+
+networks:
+  injection-net:
+    driver: bridge
+
+volumes:
+  postgres:

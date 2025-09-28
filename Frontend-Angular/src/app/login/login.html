@@ -1,0 +1,85 @@
+<section class="vh-100" style="background-color: #eee;">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <div class="container h-100">
+    <div class="row h-100 d-flex justify-content-center align-items-center">
+      <div class="col-md-8 col-lg-6 col-xl-5">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-4 p-md-5">
+
+            <p class="text-center h1 fw-bold mb-5">Login</p>
+
+            <p *ngIf="error" class="text-danger text-center">{{ error }}</p>
+
+            <form (ngSubmit)="handleSubmit()" #loginForm="ngForm" novalidate>
+
+              <!-- Email -->
+              <div class="d-flex flex-row align-items-center mb-4">
+                <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                <div class="form-outline flex-fill mb-0">
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    placeholder="Email"
+                    [(ngModel)]="formData.email"
+                    name="email"
+                    required
+                    email
+                    maxlength="{{MAX_EMAIL_LENGTH}}"
+                    #emailCtrl="ngModel"
+                    autocomplete="off"
+                    />
+                  <div *ngIf="emailCtrl.invalid && emailCtrl.touched" class="text-danger small mt-1">
+                    Lütfen geçerli bir e‑posta girin (maks {{MAX_EMAIL_LENGTH}} karakter).
+                  </div>
+                </div>
+              </div>
+
+              <!-- Password -->
+              <div class="d-flex flex-row align-items-center mb-4">
+                <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                <div class="form-outline flex-fill mb-0">
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    placeholder="Password"
+                    [(ngModel)]="formData.password"
+                    name="password"
+                    required
+                    minlength="{{MIN_PASSWORD_LENGTH}}"
+                    maxlength="{{MAX_PASSWORD_LENGTH}}"
+                    #pwdCtrl="ngModel"
+                    autocomplete="new-password"
+                    />
+                  <div *ngIf="pwdCtrl.invalid && pwdCtrl.touched" class="text-danger small mt-1">
+                    Şifre en az {{MIN_PASSWORD_LENGTH}} karakter olmalı ve {{MAX_PASSWORD_LENGTH}} karakteri geçemez.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit -->
+              <div class="d-flex justify-content-center mb-4">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-lg w-100"
+                  [disabled]="submitting">
+                  {{ submitting ? 'Logging in...' : 'Login' }}
+                </button>
+              </div>
+
+            </form>
+
+            <p class="text-center">Don't have an account? <a routerLink="/register">Register</a></p>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">

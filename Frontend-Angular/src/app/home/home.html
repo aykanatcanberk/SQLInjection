@@ -1,0 +1,63 @@
+<div class="home">
+
+  <header>
+    <img src="./images/sql-injection.jpg" alt="SQL Injection" />
+    <div class="overlay"></div>
+    <div class="overlay-content">
+      <h1>Learn About <span class="highlight">SQL Injection</span></h1>
+      <h3>Understand vulnerabilities and how to prevent them</h3>
+    </div>
+  </header>
+
+  <section class="services">
+    <div class="card">
+      <img src="./images/vulnerable.png" alt="Vulnerable Code" />
+      <div class="details">
+        <h3 class="title">What is SQL Injection?</h3>
+        <p class="description">
+          SQL Injection (SQLi) is a code injection technique that allows attackers to interfere with the queries your application makes to its database.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="./images/vulnerable.png" alt="Risks" />
+      <div class="details">
+        <h3 class="title">Risks of SQL Injection</h3>
+        <p class="description">
+          Attackers can retrieve sensitive data, modify database contents, bypass authentication, and even take control of your server.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="./images/vulnerable.png" alt="Prevention" />
+      <div class="details">
+        <h3 class="title">Prevention Methods</h3>
+        <p class="description">
+          Use prepared statements, parameterized queries, input validation, and ORM frameworks to prevent SQL Injection attacks.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="./images/vulnerable.png" alt="Example" />
+      <div class="details">
+        <h3 class="title">Example</h3>
+        <p class="description">
+          Vulnerable: <code>SELECT * FROM users WHERE username = '" + userInput + "'"</code><br>
+          Safe: <code>SELECT * FROM users WHERE username = ?</code> using prepared statements.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <h4>
+    <a class="all-rooms"
+       href="https://owasp.org/www-community/attacks/SQL_Injection"
+       target="_blank"
+       rel="noopener noreferrer">
+      Learn More
+    </a>
+  </h4>
+</div>
