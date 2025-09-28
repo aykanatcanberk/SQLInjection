@@ -4,8 +4,8 @@ spring:
 
   datasource:
     url: jdbc:postgresql://localhost:5436/sql_injection_db
-    username: postgres
-    password: postgres
+    username: sql_app_user
+    password: sql_app_user
   jpa:
     hibernate:
       ddl-auto: update
