@@ -18,7 +18,7 @@ export class Navbar {
     return this.apiService.isAuthenticated();
   }
 
-  get isCustomer():boolean{
+  get isUser():boolean{
     return this.apiService.isUser();
   }
 

@@ -5,7 +5,7 @@
   <ul class="nav-links">
     <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
 
-    <li *ngIf="isCustomer"><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+    <li *ngIf="isUser"><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
     <li *ngIf="isAdmin"><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
     <li *ngIf="!isAuthemticated"><a routerLink="/login" routerLinkActive="active">Login</a></li>
     <li *ngIf="!isAuthemticated"><a routerLink="/register" routerLinkActive="active">Register</a></li>
