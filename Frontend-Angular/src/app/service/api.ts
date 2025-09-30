@@ -7,7 +7,7 @@ import CryptoJS from 'crypto-js';
   providedIn: 'root'
 })
 export class Api {
-  private static BASE_URL = "http://localhost:8080/api";
+  private static BASE_URL = "http://localhost:8081/api";
   private static ENCRYPTION_KEY = "encrypt-key";
 
   constructor(private http: HttpClient){}

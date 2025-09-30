@@ -1,12 +1,13 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { Api } from '../service/api';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-login',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule , RouterLink, RouterLinkActive, FormsModule],
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
