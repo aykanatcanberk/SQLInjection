@@ -7,6 +7,11 @@
 
     <li *ngIf="isUser"><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
     <li *ngIf="isAdmin"><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+
+    <li *ngIf="!isAuthemticated">
+      <a routerLink="/vulnerable-login" routerLinkActive="active" style="color: red; font-weight:600;">Vulnerable Login</a>
+    </li>
+
     <li *ngIf="!isAuthemticated"><a routerLink="/login" routerLinkActive="active">Login</a></li>
     <li *ngIf="!isAuthemticated"><a routerLink="/register" routerLinkActive="active">Register</a></li>
 

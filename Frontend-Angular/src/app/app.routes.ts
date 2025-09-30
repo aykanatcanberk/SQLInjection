@@ -5,6 +5,7 @@ import { Profile } from './profile/profile';
 import { Guard } from './service/guard';
 import { Editprofile } from './editprofile/editprofile';
 import { Home } from './home/home';
+import { Vulnerable } from './vulnerable/vulnerable';
 
 export const routes: Routes = [
     {path: 'login' , component: Login},
@@ -15,6 +16,9 @@ export const routes: Routes = [
 
     {path:'home', component: Home},
 
-    {path: '**' , redirectTo: 'home'}
+    //Vulnerable Login
+    { path: 'vulnerable-login', component: Vulnerable },
+
+    {path: '**' , redirectTo: 'home'},
 
 ];

@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Navbar } from './navbar/navbar';
 import { Footer } from './footer/footer';
 import { Register } from "./register/register";
+import { Vulnerable } from './vulnerable/vulnerable'; 
 
 @Component({
   selector: 'app-root',

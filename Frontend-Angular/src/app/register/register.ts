@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-register',
   imports: [CommonModule, FormsModule],
   templateUrl: './register.html',
-  styleUrl: './register.css'
 })
 export class Register {
 
@@ -36,7 +35,7 @@ export class Register {
     /\b(union|select|insert|update|delete|drop|alter|create|exec|execute)\b/i,
     /(\bor\b|\band\b).*(=|like)/i,
     /(%00|\\x00|\x00)/i,
-    /[\x00-\x1F\x7F]/ // non-printable control chars
+    /[\x00-\x1F\x7F]/ 
   ];
 
   constructor(private apiService: Api, private router: Router, private cdr: ChangeDetectorRef) {}
@@ -82,7 +81,6 @@ export class Register {
   }
 
   private basicClientValidation(): string | null {
-    // Required fields
     if (
       !this.formData.firstName ||
       !this.formData.lastName ||
@@ -93,12 +91,11 @@ export class Register {
       return 'Please fill all required fields';
     }
 
-    // Name lengths
     if (this.formData.firstName.length > this.MAX_NAME_LENGTH || this.formData.lastName.length > this.MAX_NAME_LENGTH) {
       return 'Name fields are too long';
     }
 
-    // Email check (basic)
+    // Email check
     const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRe.test(this.formData.email) || this.formData.email.length > this.MAX_EMAIL_LENGTH) {
       return 'Please provide a valid email address';
@@ -110,7 +107,6 @@ export class Register {
       return 'Please provide a valid phone number';
     }
 
-    // Password length
     if (this.formData.password.length < this.MIN_PASSWORD_LENGTH) {
       return `Password must be at least ${this.MIN_PASSWORD_LENGTH} characters long`;
     }
@@ -140,7 +136,6 @@ export class Register {
     const validationError = this.basicClientValidation();
     if (validationError) {
       this.showError(validationError);
-      // ensure view updated and submitting false
       this.submitting = false;
       this.cdr.detectChanges();
       return;
@@ -164,7 +159,6 @@ export class Register {
         this.submitting = false;
         this.cdr.detectChanges();
 
-        // assume successful registration navigates to login
         this.router.navigate(['/login']);
       },
       error: (err: any) => {

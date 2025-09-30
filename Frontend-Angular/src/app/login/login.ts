@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-login',
   imports: [CommonModule , RouterLink, RouterLinkActive, FormsModule],
   templateUrl: './login.html',
-  styleUrl: './login.css'
 })
 export class Login {
 

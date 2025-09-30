@@ -1,0 +1,28 @@
+<p>vulnerable works!</p>
+<div class="vuln-container">
+  <h2>Vulnerable Login (SQL Injection Test)</h2>
+
+  <form (ngSubmit)="login()" class="form">
+    <label for="email">Email</label>
+    <input id="email" name="email" [(ngModel)]="email" placeholder="Email gir" required />
+
+    <label for="password">Password</label>
+    <input id="password" name="password" [(ngModel)]="password" placeholder="Şifre gir" required type="password" />
+
+    <div class="buttons">
+      <button type="submit">Login</button>
+    </div>
+  </form>
+
+  <section class="result">
+    <h3>Cevap</h3>
+    <div class="meta">
+      <span>Status: {{statusCode === null ? '-' : statusCode}}</span>
+    </div>
+    <pre class="response">{{ responseMsg || 'Henüz cevap yok' }}</pre>
+  </section>
+
+  <footer class="note">
+    <strong>UYARI:</strong> Bu ekran sadece eğitim / test amaçlıdır.
+  </footer>
+</div>
