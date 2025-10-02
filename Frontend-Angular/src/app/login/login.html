@@ -37,11 +37,11 @@
               </div>
 
               <!-- Password -->
-              <div class="d-flex flex-row align-items-center mb-4">
+              <div class="d-flex flex-row align-items-center mb-4 position-relative">
                 <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                 <div class="form-outline flex-fill mb-0">
                   <input
-                    type="password"
+                    [type]="passwordVisible ? 'text' : 'password'"
                     id="password"
                     class="form-control"
                     placeholder="Password"
@@ -53,6 +53,12 @@
                     #pwdCtrl="ngModel"
                     autocomplete="new-password"
                     />
+                  <i 
+                    class="fas" 
+                    [ngClass]="passwordVisible ? 'fa-eye-slash' : 'fa-eye'" 
+                    (click)="togglePasswordVisibility()"
+                    style="cursor: pointer; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
+                  </i>
                   <div *ngIf="pwdCtrl.invalid && pwdCtrl.touched" class="text-danger small mt-1">
                     Şifre en az {{MIN_PASSWORD_LENGTH}} karakter olmalı ve {{MAX_PASSWORD_LENGTH}} karakteri geçemez.
                   </div>

@@ -4,10 +4,9 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-
 @Component({
   selector: 'app-login',
-  imports: [CommonModule , RouterLink, RouterLinkActive, FormsModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive, FormsModule],
   templateUrl: './login.html',
 })
 export class Login {
@@ -23,20 +22,25 @@ export class Login {
 
   error: any = null;
   submitting: boolean = false;
+  passwordVisible: boolean = false; 
 
   private suspiciousPatterns: RegExp[] = [
-  /('|--|;|\/\*|\*\/|#)/i,
-  /\b(union|select|insert|update|delete|drop|alter|create|exec|execute)\b/i,
-  /(\bor\b|\band\b).*(=|like)/i,
-  /(%00|\\x00|\x00)/i,           
-  /[\x00-\x1F\x7F]/             
-];
+    /('|--|;|\/\*|\*\/|#)/i,
+    /\b(union|select|insert|update|delete|drop|alter|create|exec|execute)\b/i,
+    /(\bor\b|\band\b).*(=|like)/i,
+    /(%00|\\x00|\x00)/i,           
+    /[\x00-\x1F\x7F]/             
+  ];
 
   constructor(
     private apiService: Api,
     private router: Router,
     private cdr: ChangeDetectorRef
   ) {}
+
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+  }
 
   private trimInputs() {
     this.formData.email = (this.formData.email || '').toString().trim();
